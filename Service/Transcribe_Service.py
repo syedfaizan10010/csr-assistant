@@ -47,11 +47,3 @@ class TranscribeService:
         speech_config = await self.ConfigureSpeech(type="Synthesizer")
         result = speech_config.speak_text_async(text).get()
         return result
-    
-# service = TranscribeService()
-# res = asyncio.run(service.RecognizeSpeech())
-# asyncio.run(service.SynthesizeSpeech(res))
-    
-
-
-        
