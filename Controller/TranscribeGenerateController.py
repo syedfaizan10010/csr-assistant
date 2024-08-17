@@ -1,7 +1,7 @@
 
 from grpc_service import speech_service_pb2
 from grpc_service import speech_service_pb2_grpc
-from utils.Transcribe_Service_trial import TranscribeService
+from utils.Transcribe_Service import TranscribeService
 from utils.AIGeneration_Service import AIGenerationService
 import os
 class TranscribeGenerateController(speech_service_pb2_grpc.SpeechServiceServicer):
