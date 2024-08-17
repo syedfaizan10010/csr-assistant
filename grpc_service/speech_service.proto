@@ -1,0 +1,15 @@
+syntax ="proto3";
+
+package speech;
+
+service SpeechService {
+    rpc ExecuteConversation(SpeechRequest) returns (SpeechResponse);
+}
+
+
+message SpeechRequest {
+  string input =1;
+}
+message SpeechResponse {
+  string text = 1;
+}

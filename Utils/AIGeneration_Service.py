@@ -1,7 +1,7 @@
 from openai import AsyncOpenAI
 import os
-import asyncio
-class AIGeneration_Service:
+
+class AIGenerationService:
 
     def __init__(self) -> None:
         pass
@@ -23,4 +23,5 @@ class AIGeneration_Service:
         message = response.choices[0].message
         print(message.content)
         return message.content
+    
 
