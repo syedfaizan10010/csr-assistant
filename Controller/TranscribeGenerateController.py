@@ -13,8 +13,6 @@ class TranscribeGenerateController(speech_service_pb2_grpc.SpeechServiceServicer
 
     async def ExecuteConversation(self):
         while True:
-            
-            
             user_input = await self.transcribe_service.RecognizeSpeech()
             if user_input:
                     response_text = await self.generation_service.GenerateResponse(user_input)
@@ -50,6 +48,14 @@ class TranscribeGenerateController(speech_service_pb2_grpc.SpeechServiceServicer
               {"SPANISH": os.environ['SPANISH']},
               {"KANNADA": os.environ['KANNADA']}]
       return voice_types
+    
+    async def text_to_speech_hugging_face(self, text):
+        response = await self.transcribe_service.TTS_hugging_face(text=text)
+        return response
+    
+    async def analyse_sentiment_hugging_face(self, text):
+        response = await self.transcribe_service.analyse_sentiment(text)
+        return response
 
         
 
